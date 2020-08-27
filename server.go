@@ -35,17 +35,17 @@ var (
 
 	listenAddr            = kingpin.Flag("listen-address", "Address to listen to").Default(":8080").String()
 	natEnabled            = kingpin.Flag("nat", "Whether NAT is enabled or not").Default("true").Bool()
-	natLink               = kingpin.Flag("nat-device", "Network interface to masquerade").Default("wlp2s0").String()
-	clientIPRange         = kingpin.Flag("client-ip-range", "Client IP CIDR").Default("172.31.255.0/24").String()
+	natLink               = kingpin.Flag("nat-device", "Network interface to masquerade").Default("eth0").String()
+	clientIPRange         = kingpin.Flag("client-ip-range", "Client IP CIDR").Default("10.200.200.1/24").String()
 	authUserHeader        = kingpin.Flag("auth-user-header", "Header containing username").Default("X-Forwarded-User").String()
 	maxNumberClientConfig = kingpin.Flag("max-number-client-config", "Max number of configs an client can use. 0 is unlimited").Default("0").Int()
 
 	wgLinkName   = kingpin.Flag("wg-device-name", "WireGuard network device name").Default("wg0").String()
-	wgListenPort = kingpin.Flag("wg-listen-port", "WireGuard UDP port to listen to").Default("51820").Int()
-	wgEndpoint   = kingpin.Flag("wg-endpoint", "WireGuard endpoint address").Default("127.0.0.1:51820").String()
+	wgListenPort = kingpin.Flag("wg-listen-port", "WireGuard UDP port to listen to").Default("3546").Int()
+	wgEndpoint   = kingpin.Flag("wg-endpoint", "WireGuard endpoint address").Default("52.13.89.194:3546").String()
 	wgAllowedIPs = kingpin.Flag("wg-allowed-ips", "WireGuard client allowed ips").Default("0.0.0.0/0").Strings()
-	wgDNS        = kingpin.Flag("wg-dns", "WireGuard client DNS server (optional)").Default("").String()
-	wgKeepAlive  = kingpin.Flag("wg-keepalive", "WireGuard Keepalive for peers, defined in seconds (optional)").Default("").String()
+	wgDNS        = kingpin.Flag("wg-dns", "WireGuard client DNS server (optional)").Default("10.200.200.1").String()
+	wgKeepAlive  = kingpin.Flag("wg-keepalive", "WireGuard Keepalive for peers, defined in seconds (optional)").Default("21").String()
 
 	devUIServer = kingpin.Flag("dev-ui-server", "Developer mode: If specified, proxy all static assets to this endpoint").String()
 
