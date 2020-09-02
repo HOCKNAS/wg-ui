@@ -42,7 +42,7 @@ var (
 
 	wgLinkName   = kingpin.Flag("wg-device-name", "WireGuard network device name").Default("wg0").String()
 	wgListenPort = kingpin.Flag("wg-listen-port", "WireGuard UDP port to listen to").Default("3546").Int()
-	wgEndpoint   = kingpin.Flag("wg-endpoint", "WireGuard endpoint address").Default("52.13.89.194:3546").String()
+	wgEndpoint   = kingpin.Flag("wg-endpoint", "WireGuard endpoint address").Default("54.243.169.71:3546").String()
 	wgAllowedIPs = kingpin.Flag("wg-allowed-ips", "WireGuard client allowed ips").Default("0.0.0.0/0").Strings()
 	wgDNS        = kingpin.Flag("wg-dns", "WireGuard client DNS server (optional)").Default("10.200.200.1").String()
 	wgKeepAlive  = kingpin.Flag("wg-keepalive", "WireGuard Keepalive for peers, defined in seconds (optional)").Default("21").String()
